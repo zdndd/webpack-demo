@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -8,7 +9,8 @@ module.exports = {
      print: './src/print.js'
    },
    plugins: [
-     new HtmlWebpackPlugin({
+      new CleanWebpackPlugin(['dist']),
+      new HtmlWebpackPlugin({
        title: 'Output Management'
      })
    ],
